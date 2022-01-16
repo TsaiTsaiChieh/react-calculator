@@ -16,7 +16,7 @@ export default function Calculator() {
   }
 
   const handleDelete = () => {
-    setCurrent(current.slice(0, -1))
+    setCurrent(String(current).slice(0, -1))
   }
 
   const handleAllClear = () => {
