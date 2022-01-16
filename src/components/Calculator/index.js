@@ -45,8 +45,31 @@ export default function Calculator() {
     setPrevious('')
     setOperation('')
   }
-  const compute = () => {
 
+  const compute = () => {
+    let result = 0
+    let previousNumber = parseFloat(previous)
+    let currentNumber = parseFloat(current)
+
+    if (isNaN(previousNumber) || isNaN(currentNumber)) return
+
+    switch (operation) {
+      case '÷':
+        result =  previousNumber / currentNumber
+        break
+      case '×':
+        result =  previousNumber * currentNumber
+        break
+      case '+':
+          result =  previousNumber + currentNumber
+          break
+      case '-':
+          result =  previousNumber - currentNumber
+          break
+      default:
+        return
+    }
+    return result
   }
   return (
     <Container>
